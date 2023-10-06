@@ -38,7 +38,7 @@ RUN \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
-COPY run.sh ./
+COPY run-gpu.sh ./
 
 EXPOSE 10200
 EXPOSE 5000
