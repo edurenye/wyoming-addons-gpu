@@ -6,6 +6,11 @@ services:
       service: wyoming-piper
     build:
       dockerfile: GPU.Dockerfile
+    ports:
+      - "10200:10200"
+    volumes:
+      - piper-data:/data
+    command: [ "--voice", "en_US-lessac-medium" ]
     deploy:
       resources:
         reservations:
@@ -20,6 +25,11 @@ services:
       service: wyoming-whisper
     build:
       dockerfile: GPU.Dockerfile
+    ports:
+      - "10300:10300"
+    volumes:
+      - whisper-data:/data
+    command: [ "--model", "medium-int8", "--language", "en" ]
     deploy:
       resources:
         reservations:
@@ -34,6 +44,11 @@ services:
       service: wyoming-openwakeword
     build:
       dockerfile: GPU.Dockerfile
+    ports:
+      - "10400:10400"
+    volumes:
+      - openwakeword-data:/data
+    command: [ "--model", "hey_jarvis" ]
     deploy:
       resources:
         reservations:
@@ -41,4 +56,8 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
-
+volumes:
+ openwakeword-data:
+ whisper-data:
+ piper-data:
+  
