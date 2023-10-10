@@ -30,6 +30,5 @@ services:
       - "10400:10400"
     volumes:
       - ./openwakeword-data:/data
-    command: [ "--model", "hey_jarvis" ]
+    command: [ "--preload-model", "hey_jarvis", "--model", "hey_jarvis" ]
     restart: unless-stopped
-
