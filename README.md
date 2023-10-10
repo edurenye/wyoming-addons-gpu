@@ -32,13 +32,13 @@ docker compose -f docker-compose.base.yml build --no-cache
 Run it with:
 
 ``` sh
-docker composer -f docker-compose.base.yml up -d
+docker compose -f docker-compose.base.yml up -d
 ```
 
 Take it down with:
 
 ``` sh
-docker composer down
+docker compose down
 ```
 
 ### Run with GPU
@@ -52,13 +52,13 @@ docker compose -f docker-compose.gpu.yml build --no-cache
 Run it with:
 
 ``` sh
-docker composer -f docker-compose.gpu.yml up -d
+docker compose -f docker-compose.gpu.yml up -d
 ```
 
 Take it down with:
 
 ``` sh
-docker composer down
+docker compose down
 ```
 
 ### Extend it
