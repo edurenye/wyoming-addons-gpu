@@ -1,4 +1,6 @@
-FROM debian:bookworm-slim
+ARG BASE=debian:bookworm-slim
+FROM $BASE
+
 ARG TARGETARCH
 ARG TARGETVARIANT
 
@@ -38,9 +40,9 @@ RUN \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
-COPY run-gpu.sh ./
+COPY $RUN_SCRIPT ./
 
 EXPOSE 10200
 EXPOSE 5000
 
-ENTRYPOINT ["bash", "/run-gpu.sh"]
+ENTRYPOINT ["bash", "/${RUN_SCRIPT}"]
