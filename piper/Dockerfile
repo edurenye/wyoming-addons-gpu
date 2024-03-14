@@ -1,5 +1,5 @@
+ARG BASE=debian:bookworm-slim
 FROM $BASE
-
 ARG TARGETARCH
 ARG TARGETVARIANT
 
@@ -39,10 +39,9 @@ RUN \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
-COPY $RUN_SCRIPT ./
-ENV RUN_SCRIPT_ENV=$RUN_SCRIPT
+COPY run.sh ./
 
 EXPOSE 10200
 EXPOSE 5000
 
-ENTRYPOINT ["bash", "/${RUN_SCRIPT_ENV}"]
+ENTRYPOINT ["bash", "/run.sh"]
