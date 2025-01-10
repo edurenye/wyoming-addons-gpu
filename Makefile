@@ -10,7 +10,7 @@ IMAGE_HASH := $(shell git describe --always --dirty)
 .PHONY = docker docker-tags
 
 docker: whisper/Dockerfile
-	cd whisper && BUILDAH_FORMAT=docker buildah bud --build-arg BASE=docker.io/nvidia/cuda:12.3.2-cudnn9-runtime-ubuntu22.04 -t $(IMAGE_NAME) .
+	cd whisper && BUILDAH_FORMAT=docker buildah bud --build-arg BASE=docker.io/nvidia/cuda:12.6.3-cudnn-devel-ubuntu24.04 -t $(IMAGE_NAME) .
 	[ "$(IMAGE_BRANCH)" != "" ] || exit 0 ; cd whisper && buildah tag $(IMAGE_NAME) $(IMAGE_NAME):$(IMAGE_BRANCH)
 	[ "$(IMAGE_BRANCH)" != "" ] || exit 0 ; cd whisper && buildah tag $(IMAGE_NAME) $(IMAGE_NAME):$(IMAGE_BRANCH)-$(IMAGE_HASH)
 
