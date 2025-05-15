@@ -24,6 +24,15 @@ docker run -it -p 10300:10300 -v /path/to/local/data:/data rhasspy/wyoming-whisp
 docker run -it -p 10200:10200 -v /path/to/local/data:/data rhasspy/wyoming-piper --voice en_US-lessac-medium
 ```
 
+### HTTP Server
+
+An HTTP server is available on port 5000.
+
+``` sh
+docker run -it -p 5000:5000 -p 10200:10200 -v /path/to/local/data:/data rhasspy/wyoming-piper --voice en_US-lessac-medium
+```
+
+Visit http://localhost:5000 to explore the API.
 
 ## Run openWakeWord
 
@@ -31,13 +40,11 @@ docker run -it -p 10200:10200 -v /path/to/local/data:/data rhasspy/wyoming-piper
 docker run -it -p 10400:10400 rhasspy/wyoming-openwakeword --preload-model 'ok_nabu'
 ```
 
-
 ## Run snowboy
 
 ``` sh
 docker run -it -p 10400:10400 rhasspy/wyoming-snowboy
 ```
-
 
 ## Run microWakeWord
 
@@ -45,13 +52,11 @@ docker run -it -p 10400:10400 rhasspy/wyoming-snowboy
 docker run -it -p 10400:10400 rhasspy/wyoming-microwakeword
 ```
 
-
 ## Run rhasspy-speech
 
 ``` sh
 docker run -it -p 10300:10300 -v /path/to/download/models:/models -v /path/to/train:/train rhasspy/wyoming-rhasspy-speech
 ```
-
 
 ## Run speech-to-phrase
 
