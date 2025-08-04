@@ -1,4 +1,5 @@
-FROM debian:bookworm-slim
+ARG BASE=debian:bookworm-slim
+FROM $BASE
 
 # Install Whisper
 WORKDIR /usr/src
