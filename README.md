@@ -121,4 +121,3 @@ docker compose down
 
 You can extend those files adding your own languages.
 More on docker compose extend in the [official documentation](https://docs.docker.com/compose/multiple-compose-files/extends/).
-

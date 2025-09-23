@@ -8,7 +8,7 @@ python3 -m wyoming.http.tts_server \
 HTTP_SERVER_PID=$!
 
 python3 -m wyoming_piper \
-    --piper 'piper' \
+    --piper '/usr/share/piper/piper' \
     --use-cuda \
     --uri 'tcp://0.0.0.0:10200' \
     --data-dir /data \

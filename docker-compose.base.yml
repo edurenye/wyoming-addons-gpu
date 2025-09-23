@@ -50,6 +50,13 @@ services:
 #      - "10400:10400"
 #    <<: [ *common ]
 
+#  speech-to-phrase:
+#    build:
+#      context: ./speech-to-phrase/
+#    ports:
+#      - "10300:10300"
+#    <<: [ *common ]
+
 #  wyoming-vosk:
 #    build:
 #      context: ./vosk/
